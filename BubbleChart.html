@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./src/radar-chart.css">
+</head>
+<body>
+<div id="navbar">
+    <a id="soccer_legends" href = "index.html">Soccer Legends</a>
+
+    <a class ="right" href="ProcessBook.html">Process Book</a>
+    <a class ="right" href="statInfo.html">Statistical Info</a>
+    <a class ="right" href="BubbleChart.html">Explore Data</a>
+    <a class="active right" href="index.html">Player Comparison</a>
+</div>
+<div id="select-div">
+    <label for="league-dropdown" id="dropdown-label">Choose a Statistic</label>
+</div>
+<div class="centering">
+    <select id="time-dropdown">
+        <option value="data/data_a.csv">2022-2033 Week 12</option>
+        <option value="data/data_a_2021_2022.csv">2021-2022 Season</option>
+    </select>
+    <select id="league-dropdown">
+        <option value="Passing">Passing</option>
+        <option value="Dribbling">Dribbling</option>
+        <option value="Shooting">Shooting</option>
+        <option value="Defending">Defending</option>
+        <option value="Involvement">Involvement</option>
+        <option value="Discipline">Discipline</option>
+    </select>
+</div>
+  <!-- create a bubble chart that you can select a stat (passing, dribbling, shooting, etc) Group clusters by league-->
+    <div id="bubble-chart"></div>
+<script type="text/javascript" src="./js/d3.min.js"></script>
+<script type="text/javascript" src="./js/bubble.js"></script>
+</body>
+</html>

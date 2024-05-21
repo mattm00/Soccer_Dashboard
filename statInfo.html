@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stat Info</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="./src/radar-chart.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+
+<div id="navbar">
+    <a id="soccer_legends" href = "index.html">Soccer Legends</a>
+    <a class ="right" href="ProcessBook.html">Process Book</a>
+    <a class ="right" href="statInfo.html">Statistical Info</a>
+    <a class ="right" href="BubbleChart.html">Explore Data</a>
+    <a class="active right" href="index.html">Player Comparison</a>
+</div>
+<br>
+<p1>League Average Stats:</p1>
+<br>
+<script type="text/javascript">
+    //////
+    const img1 = new Image(128,128);
+    img1.src = "images/serie.png";
+    img1.style.border = "10px solid silver";
+    img1.style.borderRadius = "30px";
+    img1.style.position = "relative";
+    img1.style.left = "70px";
+    document.body.appendChild(img1);
+
+    const img2 = new Image(128,128);
+    img2.src = "images/Laliga.png";
+    img2.style.border = "10px solid silver";
+    img2.style.borderRadius = "30px"
+    //img2.align = "center"
+    img2.style.position = "relative";
+    img2.style.left = "220px";
+    document.body.appendChild(img2);
+
+    const img3 = new Image(128,128);
+    img3.src = "images/Bund.png";
+    img3.style.border = "10px solid silver";
+    img3.style.borderRadius = "30px"
+    img3.style.position = "relative";
+    img3.style.left = "370px";
+    document.body.appendChild(img3);
+
+    const img4 = new Image(128,128);
+    img4.src = "images/pre.png";
+    img4.style.border = "10px solid silver";
+    img4.style.borderRadius = "30px"
+    img4.style.position = "relative";
+    img4.style.left = "520px";
+    document.body.appendChild(img4);
+
+    const img5 = new Image(128,128);
+    img5.src = "images/Ligue.png";
+    img5.style.border = "10px solid silver";
+    img5.style.borderRadius = "30px"
+    img5.align = "justify";
+    img5.style.position = "relative";
+    img5.style.left = "670px";
+    document.body.appendChild(img5);
+</script>
+<br>
+<br>
+<br>
+<div id="static" ></div>
+<script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+
+<script type="text/javascript" src="./js/d3.min.js"></script>
+
+<script type="text/javascript" src="./src/staticBar-chart.js"></script>
+
+
+    
+ <script type="text/javascript">
+leagueStatic();
+function leagueStatic(){
+d3v7.json("data/data_means.json").then(function(data){
+    console.log(data.data[0]);
+    for(var i = 0;i < 5;i++){
+        renderBar2([data.data[i]]);
+    }
+});
+}
+</script>
+</body>
+</html>
